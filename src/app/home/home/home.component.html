@@ -1,0 +1,43 @@
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<app-header></app-header>
+
+<!-- <div class="home-News global-width body-width home-top">
+    <div class="title">
+        <h4 class="font-weight-bold">Top News</h4>
+    </div>
+    <div class="media mt-4">
+        <img [src]="topNews[0].img" class="align-self-center mr-4 w-25">
+        <div class="media-body cursor" (click)="showDetails(topNews[0])">
+            <h4 class="font-weight-bold">{{topNews[0].title}}</h4>
+            <div>{{topNews[0].des}}</div>
+            <div class="mt-3">
+                <span class="source">{{topNews[0].name}}</span>
+            </div>
+            
+        </div>
+        <i class="" aria-hidden="true" (click)="bookmark(topNews[0])" [ngClass]="checkIsBookmarked(topNews[0]) == true ? 'fa fa-bookmark' : 'fa fa-bookmark-o'"></i>
+      </div>
+</div> -->
+
+<div class="home-News global-width body-width mt-5" >
+    <div class="title">
+        <h4 class="font-weight-bold">All News</h4>
+    </div>
+    <div class="media mt-4" *ngFor="let news of allNews" (scroll)="onScroll($event)" >
+        <img [src]="news.img" class="align-self-center mr-4 w-25">
+        <div class="media-body cursor" (click)="showDetails(news)" >
+            <h4 class="font-weight-bold">{{news.title}}</h4>
+            <div>{{news.des}}</div>
+            <div class="mt-3">
+                <span class="source">{{news.name}}</span>
+
+            </div>
+            
+        </div>
+        <i class="" aria-hidden="true" (click)="bookmark(news)" [ngClass]="checkIsBookmarked(news) == true ? 'fa fa-bookmark' : 'fa fa-bookmark-o'"></i>
+      </div>
+</div>
+
+<app-footer></app-footer>
+
+<router-outlet></router-outlet>

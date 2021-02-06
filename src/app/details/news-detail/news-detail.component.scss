@@ -1,0 +1,21 @@
+.news-detail {
+    img {
+        width: 100%;
+    }
+    .description {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .news-detail {      
+        .description {
+            display: block;
+        }
+        .news-detail-mob {
+            margin-top: 10px;
+            margin-left: 0 !important;
+        }        
+    }
+    
+}

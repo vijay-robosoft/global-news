@@ -1,0 +1,41 @@
+.footer {
+    background-color: #000000;
+    img {
+        width: 10%;
+    }
+    .footer-firstNav {
+        li {
+            a {
+                color: #777777;
+                font-size: 14px;
+            }
+        }
+    }
+    nav {
+        li {
+            margin: 10px;
+            i {
+                color: #000000;
+                font-size: 20px;
+                margin-top: 10px;
+                background: #ffffff;
+                width: 43px;
+                text-align: center;
+                padding: 11px;
+                border-radius: 60px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    nav {
+        ul {
+            flex-direction: row;
+            
+        }
+    }
+    .footer-secondNav {
+        float: left !important;        
+    }
+}
