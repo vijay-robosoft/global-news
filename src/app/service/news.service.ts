@@ -230,7 +230,7 @@ export class NewsService {
         
       }
      })
-    )    
+    ) as Observable<ListOfNews[]>; 
 
   
     
@@ -259,7 +259,7 @@ export class NewsService {
         
       }
      })
-    )    
+    )  as Observable<topNewsClass[]>;  
     
   }
 }
