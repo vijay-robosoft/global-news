@@ -25,7 +25,10 @@
                   <i class="fa fa-search mob"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Search">
+              <input type="text" class="form-control" placeholder="Search" [formControl]="searchText">            
+              <!-- <div *ngFor="let news of totalNews">
+                {{news.title}}
+              </div> -->
             </div>
           </form>
         </li>

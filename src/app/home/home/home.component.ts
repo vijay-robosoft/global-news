@@ -38,16 +38,18 @@ export class HomeComponent implements OnInit {
   }
 
   public getNews = () => {
-    this.totalNews = this.newsService.getNews();
+   this.newsService.getNews().subscribe(data => {
+    this.totalNews = data;
     this.onScrollLoad(this.start, this.end);
     console.log(this.allNews);
+   })
+   
   }
 
   public getTopNews = () => {
-    // this.newsService.topNews().subscribe(data => {
-    //   this.topNews = data;
-    //   console.log("top ->", this.topNews)
-    // });
+    this.newsService.topNews().subscribe(data => {
+      this.topNews = data;
+    });
   }
 
   @HostListener("window:scroll", [])

@@ -26,9 +26,9 @@ export class NewsDetailComponent implements OnInit {
   }
 
   public getTopNews = () => {
-    // this.newsService.topNews().subscribe(data => {
-    //   this.topNewslist = data;
-    // });
+    this.newsService.topNews().subscribe(data => {
+      this.topNewslist = data;
+    });
   }
 
   public showDetails = (details: ListOfNews | topNewsClass) => {
@@ -37,14 +37,16 @@ export class NewsDetailComponent implements OnInit {
   }
 
   public checkIsBookmarked = (news: ListOfNews | topNewsClass) => {
-    console.log("here");
-    const bookmarked = this.dataShareService.getBookmark()
-    if(bookmarked.length > 0) {
-      for(let list = 0 ; list < bookmarked.length ; list++) {
-        if(news.name === bookmarked[list].name) return true;          
-        else return false; 
+    if(news) {
+      const bookmarked = this.dataShareService.getBookmark()
+      if(bookmarked.length > 0) {
+        for(let list = 0 ; list < bookmarked.length ; list++) {
+          if(news.name === bookmarked[list].name) return true;          
+          else return false; 
+        }
       }
     }
+    
   }
 
 }
